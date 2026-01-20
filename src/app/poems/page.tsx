@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { getAllPoems } from "@/lib/poems";
+import { formatDateDDMMYYYY } from "@/lib/formatDate";
+
 
 function formatDate(iso: string) {
   const [y, m, d] = iso.split("-").map(Number);
@@ -26,7 +28,7 @@ export default function PoemsPage() {
               <Link href={`/poems/${p.slug}`} style={{ fontSize: "1.1rem", fontWeight: 600 }}>
                 {p.title}
               </Link>
-              <span style={{ opacity: 0.75, whiteSpace: "nowrap" }}>{formatDate(p.date)}</span>
+              <span style={{ opacity: 0.75, whiteSpace: "nowrap" }}>{formatDateDDMMYYYY(p.date)}</span>
             </div>
 
             {p.excerpt ? <p style={{ marginTop: "0.5rem", opacity: 0.85 }}>{p.excerpt}</p> : null}

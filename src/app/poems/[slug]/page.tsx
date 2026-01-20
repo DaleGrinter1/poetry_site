@@ -1,5 +1,7 @@
 import { getAllPoemSlugs, getPoemBySlug } from "@/lib/poems";
 import { notFound } from "next/navigation";
+import { formatDateDDMMYYYY } from "@/lib/formatDate";
+
 
 // Keep this (it’s good practice once params are correct)
 export const dynamicParams = false;
@@ -23,7 +25,7 @@ export default async function PoemPage({ params }: Props) {
     <main style={{ padding: "2rem", maxWidth: 800, margin: "0 auto" }}>
       <header style={{ marginBottom: "1.5rem" }}>
         <h1 style={{ marginBottom: "0.25rem" }}>{poem.title}</h1>
-        <div style={{ opacity: 0.75 }}>{poem.date}</div>
+        <div style={{ opacity: 0.75 }}>{formatDateDDMMYYYY(poem.date)}</div>
       </header>
 
       <article

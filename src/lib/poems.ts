@@ -30,8 +30,10 @@ function getMarkdownFilenames(): string[] {
   assertPoemsDirExists();
   return fs
     .readdirSync(POEMS_DIR)
-    .filter((name) => name.toLowerCase().endsWith(".md"));
+    .filter((name) => name.toLowerCase().endsWith(".md"))
+    .filter((name) => !path.basename(name).startsWith("_"));
 }
+
 
 function normalizeSlug(input: unknown): string {
   if (typeof input !== "string" || input.trim() === "") {
