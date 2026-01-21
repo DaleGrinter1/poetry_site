@@ -5,7 +5,7 @@ export default function HomePage() {
     <main style={{ padding: "2rem", maxWidth: 900, margin: "0 auto" }}>
       <h1 style={{ marginBottom: "0.5rem" }}>Poetry</h1>
       <p style={{ opacity: 0.85, lineHeight: 2.6, marginBottom: "1.25rem" }}>
-        A public archive of poems by Mrs Grace Boyd.
+        A public archive of poems by Grace Boyd.
       </p>
 
       <Link
